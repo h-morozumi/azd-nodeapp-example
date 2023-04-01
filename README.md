@@ -33,27 +33,27 @@ AzureでToDoアプリを立ち上げて、完全に機能するWebアプリを�
 
 ### Prerequisites
 
-The following prerequisites are required to use this application. Please ensure that you have them all installed locally.
+このアプリケーションを使用するためには、以下の前提条件が必要です。すべてのローカルインストールが完了していることを確認してください。
 
 - [Azure Developer CLI](https://aka.ms/azd-install)
 - [Node.js with npm (16.13.1+)](https://nodejs.org/) - for API backend and Web frontend
 
 ### Quickstart
 
-The fastest way for you to get this application up and running on Azure is to use the `azd up` command. This single command will create and configure all necessary Azure resources - including access policies and roles for your account and service-to-service communication with Managed Identities.
+`azd up` コマンドを使用するで、Azure上にこのアプリケーションを展開することができます。この単一のコマンドで、アカウントとサービス間の通信に必要なすべてのAzureリソース、アクセスポリシー、およびロールを作成および構成します。Managed Identitiesとのサービス間通信を含みます。
 
-1. Open a terminal, create a new empty folder, and change into it.
-1. Run the following command to initialize the project, provision Azure resources, and deploy the application code.
+1. ターミナルを開き、新しい空のフォルダを作成し、そのフォルダに移動してください。
+1. プロジェクトを初期化し、Azureリソースをプロビジョニングし、アプリケーションコードをデプロイするには、以下のコマンドを実行してください。
 
 ```bash
 azd up --template todo-nodejs-mongo
 ```
 
-You will be prompted for the following information:
+以下の情報が求められます。
 
-- `Environment Name`: This will be used as a prefix for the resource group that will be created to hold all Azure resources. This name should be unique within your Azure subscription.
-- `Azure Location`: The Azure location where your resources will be deployed.
-- `Azure Subscription`: The Azure Subscription where your resources will be deployed.
+- `Environment Name`: これは、すべてのAzureリソースを保持するために作成されるリソースグループの接頭辞として使用されます。この名前は、Azureサブスクリプション内で一意である必要があります。
+- `Azure Location`: リソースがデプロイされるAzureのリージョンです。
+- `Azure Subscription`: リソースがデプロイされるAzureサブスクリプションです。
 
 > NOTE: This may take a while to complete as it executes three commands: `azd init` (initializes environment), `azd provision` (provisions Azure resources), and `azd deploy` (deploys application code). You will see a progress indicator as it provisions and deploys your application.
 
